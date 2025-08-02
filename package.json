@@ -1,0 +1,25 @@
+{
+  "name": "ejs-learnings",
+  "version": "1.0.0",
+  "description": "Step-by-step EJS learning journey with practical examples and projects. Covers EJS syntax, layouts, partials, form handling, and integration with Express.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivekmahey/EJS-Learnings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vivekmahey/EJS-Learnings/issues"
+  },
+  "homepage": "https://github.com/vivekmahey/EJS-Learnings#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
