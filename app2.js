@@ -28,6 +28,20 @@ app.get('/users',(req,res)=>{
 });
 
 
+// To Show out of stock products with ejs
+
+app.get("/products", (req, res) => {
+  const products = [
+    { name: "iPhone 15", price: 79900, stock: 5 },
+    { name: "MacBook Air", price: 112000, stock: 0 },
+    { name: "AirPods Pro", price: 24900, stock: 12 },
+    { name: "Apple Watch", price: 35900, stock: 0 }
+  ];
+
+  res.render("products", {pageTitle: "Users Page", products });
+});
+
+
 app.listen(port ,()=>{
     console.log(`Server is running on port http://localhost:${port}`);
 });

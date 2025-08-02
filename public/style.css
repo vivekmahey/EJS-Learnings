@@ -82,3 +82,37 @@ body {
   background-color: #4d94ff;
   color: white;
 }
+
+
+/* For Out of stock */
+
+.product-list {
+  list-style: none;
+  padding: 0;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.stock {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.stock.out {
+  color: #fff;
+  background-color: #e74c3c; /* red */
+}
+
+.stock.in {
+  color: #fff;
+  background-color: #2ecc71; /* green */
+}
