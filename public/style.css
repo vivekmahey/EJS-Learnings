@@ -49,7 +49,7 @@ body {
 .container {
   max-width: 960px;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 3rem;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0,0,0,0.05);
@@ -62,4 +62,23 @@ body {
   margin-top: 2rem;
   background-color: #f1f1f1;
   font-size: 0.9rem;
+}
+
+/* Conditionals and Loops */
+
+.badge {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 20px;
+}
+
+.badge.admin {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.badge.user {
+  background-color: #4d94ff;
+  color: white;
 }

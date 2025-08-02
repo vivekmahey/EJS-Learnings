@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<div class="container">
+    <h1>Users List</h1>
+    <% if(users.length === 0 ) { %>
+        <p>User Not Found !!!</p>
+    <% } else { %>
+        <ul>
+            <% users.forEach(user => { %>
+              <li>
+                <strong><%= user.name %></strong> 
+                <% if(user.role == "admin" ) { %>
+                    <span class="badge admin">Admin</span>
+                <% } else { %>
+                    <span class="badge user">User</span>
+                <% } %>
+              </li>
+             <% }); %>
+    </ul>
+  <% } %>
+</div>
+
+<%- include("partials/footer") %>
