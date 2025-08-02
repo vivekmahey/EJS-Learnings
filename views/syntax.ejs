@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Syntax</title>
+</head>
+<body>
+    <h1>Hey! , Welcome <%= user %></h1>
+    <!-- Display age -->
+    <p>You are <%= age %> years old !</p>
+    
+    <!-- use if ,else  -->
+     <% if( isLoggedIn ){%>
+        <p>Status : User Logged In</p>
+    <% } else { %>
+        <p>Status : Guest </p>
+    <% } %>
+
+    
+    <p> <%= user %> Skills</p>
+    <ul>
+        <% for(let i=0; i<skills.length; i++){ %>
+            <p><%= skills[i] %></p>
+        <% } %>
+    </ul>
+
+  <p>Escaped HTML: <%= "<strong>This is bold</strong>" %></p>
+  <p>Unescaped HTML: <%- "<strong>This is bold</strong>" %></p>
+
+
+</body>
+</html>
