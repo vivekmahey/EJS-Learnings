@@ -1,9 +1,9 @@
 module.exports={
     formatDate: function(date){
-        return new Date(date).toLocaleDateString(en-IN,{
-            date:'numaric',
-            month:'short',
-            year:'numaric',
+        return new Date(date).toLocaleDateString("en-IN",{
+            day: "numeric",
+            month: "short",
+            year: "numeric",
         });
 
     },
@@ -11,7 +11,7 @@ module.exports={
             return text.langth > length ? text.substring(0,length) + "..." : text ;
         },
 
-        toUpper: function(str){
+        toUpperCase: function(str){
             return str.toUpperCase();
         }
     
