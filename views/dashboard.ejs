@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<div class="container">
+  <h1>Welcome, <%= user.name %> 👋</h1>
+  <p>Email: <%= user.email %></p>
+
+  <% if (user.isAdmin) { %>
+    <p class="badge">Role: Admin ✅</p>
+  <% } else { %>
+    <p class="badge">Role: User</p>
+  <% } %>
+
+  <div class="stats">
+    <h3>Your Stats</h3>
+    <ul>
+      <li>Posts: <%= user.stats.posts %></li>
+      <li>Followers: <%= user.stats.followers %></li>
+      <li>Following: <%= user.stats.following %></li>
+    </ul>
+  </div>
+
+  <div class="recent-posts">
+    <h3>Recent Posts</h3>
+    <ul>
+      <% user.recentPosts.forEach(post => { %>
+        <li>
+          <strong><%= post.title %></strong> <br />
+          <small>Published on <%= post.date %></small>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

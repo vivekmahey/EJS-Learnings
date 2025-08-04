@@ -58,6 +58,30 @@ app.post("/contact", (req, res) => {
   res.render("success", {pageTitle: "Sucess Page" , name, email, message });
 });
 
+// Static VS dynamic
+
+app.get("/dashboard", (req, res) => {
+  const user = {
+    name: "Vivek Mahey",
+    email: "vivek@example.com",
+    isAdmin: true,
+    stats: {
+      posts: 4,
+      followers: 150,
+      following: 120
+    },
+    recentPosts: [
+      { title: "Mastering EJS", date: "2025-08-01" },
+      { title: "Intro to Express.js", date: "2025-07-25" },
+      { title: "Node Middleware Guide", date: "2025-07-15" }
+    ]
+  };
+
+  res.render("dashboard", { pageTitle: "User Dashboard", user });
+});
+
+
+
 
 app.listen(port ,()=>{
     console.log(`Server is running on port http://localhost:${port}`);
