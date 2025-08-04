@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<div class="container">
+  <h1>Contact Us</h1>
+
+  <form action="/contact" method="POST" class="form">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" rows="4" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<%- include("partials/footer") %>

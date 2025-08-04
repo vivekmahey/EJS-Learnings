@@ -5,6 +5,7 @@ const port=5000;
 app.set("view engine","ejs");
 
 app.use(express.static('public')) // serve CSS, images, etc.
+app.use(express.urlencoded({ extended: true }));  //Data Parsing and Reading by express 
 
 app.get("/",(req,res)=>{
     res.render('home2',{pageTitle:'Home', user:"Vivek"})
@@ -39,6 +40,22 @@ app.get("/products", (req, res) => {
   ];
 
   res.render("products", {pageTitle: "Users Page", products });
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact", { pageTitle: "Contact Page" });
+});
+
+app.post("/contact", (req, res) => {
+  const { name, email, message } = req.body;
+
+  // ✅ Basic validation
+  if (!name || !email || !message) {
+    return res.send("Please fill all fields!");
+  }
+
+  // Pass data to a success page
+  res.render("success", {pageTitle: "Sucess Page" , name, email, message });
 });
 
 

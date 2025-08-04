@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<div class="container">
+  <h1>Thanks, <%= name %> 🙏</h1>
+  <p>We’ve received your message!</p>
+
+  <div class="message-box">
+    <h3>Your Details:</h3>
+    <p><strong>Email:</strong> <%= email %></p>
+    <p><strong>Message:</strong><br><%= message %></p>
+  </div>
+</div>
+
+<%- include("partials/footer") %>
