@@ -5,4 +5,4 @@ Step-by-step EJS learning journey with practical examples and projects. Covers E
 
 ```bash
 npm install
-node app.js
+node app2.js
