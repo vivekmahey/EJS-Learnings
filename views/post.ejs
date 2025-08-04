@@ -1,0 +1,20 @@
+<div class="card shadow">
+  <div class="card-body">
+    <h2 class="card-title"><%= helpers.toUpper(post.title) %></h2>
+    <div class="d-flex align-items-center mb-3">
+      <img src="<%= post.authorImg %>" class="rounded-circle me-3" width="60" height="60" alt="Author">
+      <div>
+        <strong><%= post.author %></strong><br>
+        <small class="text-muted">Published on <%= helpers.formatDate(post.createdAt) %></small>
+      </div>
+    </div>
+
+    <p class="card-text"><%= helpers.truncate(post.content, 150) %></p>
+
+    <div class="mt-3">
+      <% post.tags.forEach(tag => { %>
+        <span class="badge bg-primary me-1"><%= tag %></span>
+      <% }) %>
+    </div>
+  </div>
+</div>
