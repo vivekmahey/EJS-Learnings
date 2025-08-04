@@ -1,11 +1,18 @@
 const express=require("express");
 const app=express();
 const port=5000;
+const engine=require("ejs-mate");
+const helpers=require("./helpers");
 
+
+app.engine("ejs",engine);
 app.set("view engine","ejs");
 
 app.use(express.static('public')) // serve CSS, images, etc.
 app.use(express.urlencoded({ extended: true }));  //Data Parsing and Reading by express 
+
+// Make helpers available globally
+app.local.helpers=helpers;
 
 app.get("/",(req,res)=>{
     res.render('home2',{pageTitle:'Home', user:"Vivek"})
@@ -94,6 +101,27 @@ app.get("/profile", (req, res) => {
 
   res.render("profile", { pageTitle:'Profile Page', user });
 });
+
+// Sample blog post
+const post = {
+  pageTitle: "Learning Advanced EJS",
+  author: "Vivek Mahey",
+  authorImg: "/images/author.jpg",
+  content: "EJS is a great templating engine for Node.js. You can create layouts, use helpers, and even apply SEO strategies. In this blog, we'll explore how to structure views and make EJS pages scalable.",
+  createdAt: new Date("2025-08-01"),
+  tags: ["Node.js", "EJS", "Web Dev"]
+};
+
+app.get("/post", (req, res) => {
+  res.render("post", {
+    layout: "layouts/main",
+    pageTitle: `Post: ${post.pageTitle}`,
+    metaDescription: "An in-depth tutorial on Advanced EJS practices for scalable Node.js projects.",
+    post
+  });
+});
+
+
 
 
 app.listen(port ,()=>{
