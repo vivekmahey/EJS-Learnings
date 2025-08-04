@@ -81,6 +81,19 @@ app.get("/dashboard", (req, res) => {
 });
 
 
+app.get("/profile", (req, res) => {
+  const user = {
+    name: "Vivek Mahey",
+    username: "vivek.codes",
+    bio: "Full Stack Developer • Dreamer • Coder",
+    email: "vivek@example.com",
+    profileImg: "/images/img1.jpeg", // image from public folder
+    location: "Punjab, India",
+    skills: ["JavaScript", "React", "Node.js", "MongoDB", "EJS"]
+  };
+
+  res.render("profile", { pageTitle:'Profile Page', user });
+});
 
 
 app.listen(port ,()=>{
